@@ -1,6 +1,6 @@
-import type { Project as ProjectType } from '@/data/projects';
-import { cn } from '@/utils/cn';
-import Link from 'next/link';
+import type { Project as ProjectType } from "@/data/projects";
+import { cn } from "@/utils/cn";
+import Link from "next/link";
 
 type ProjectProps = { project: ProjectType };
 
@@ -19,8 +19,8 @@ export default function Project({ project }: ProjectProps) {
           {project.technologiesUsed.map((item) => (
             <span
               className={cn(
-                'text-xs text-mint-11 border border-mint-11 bg-mint-3 rounded-full px-2',
-                'cursor-pointer select-none',
+                "text-xs text-mint-11 border border-mint-11 bg-mint-3 rounded-full px-2",
+                "cursor-pointer select-none",
               )}
             >
               {item}

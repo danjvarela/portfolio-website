@@ -1,6 +1,6 @@
-import { cn } from '@/utils/cn';
+import { cn } from "@/utils/cn";
 
-type SectionProps = React.ComponentProps<'section'> & {
+type SectionProps = React.ComponentProps<"section"> & {
   sectionTitle?: string;
 };
 
@@ -12,7 +12,7 @@ export default function Section({
 }: SectionProps) {
   return (
     <section
-      className={cn('w-full p-4 md:pt-12 md:min-w-[320px]', className)}
+      className={cn("w-full p-4 md:pt-12 md:min-w-[320px]", className)}
       {...props}
     >
       {sectionTitle && (

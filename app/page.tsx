@@ -1,24 +1,24 @@
-import Copyright from '@/components/copyright';
-import Project from '@/components/project';
-import Section from '@/components/section';
-import SocialLink from '@/components/social-link';
-import projects from '@/data/projects';
-import { cn } from '@/utils/cn';
-import Link from 'next/link';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import Copyright from "@/components/copyright";
+import Project from "@/components/project";
+import Section from "@/components/section";
+import SocialLink from "@/components/social-link";
+import projects from "@/data/projects";
+import { cn } from "@/utils/cn";
+import Link from "next/link";
+import { BsGithub, BsLinkedin } from "react-icons/bs";
 
 export default function Home() {
   return (
     <div
       className={cn(
-        'mx-auto flex flex-col justify-center items-center',
-        'md:flex-row',
+        "mx-auto flex flex-col justify-center items-center",
+        "md:flex-row",
       )}
     >
       <div
         className={cn(
-          'w-full h-fit flex flex-col',
-          'md:w-1/2 md:max-w-lg md:h-screen md:fixed md:right-1/2 md:top-0',
+          "w-full h-fit flex flex-col",
+          "md:w-1/2 md:max-w-lg md:h-screen md:fixed md:right-1/2 md:top-0",
         )}
       >
         <Section className="md:h-full pt-12 md:pt-24">
@@ -49,8 +49,8 @@ export default function Home() {
 
       <div
         className={cn(
-          'w-full h-fit',
-          'md:w-1/2 md:max-w-lg md:translate-x-1/2',
+          "w-full h-fit",
+          "md:w-1/2 md:max-w-lg md:translate-x-1/2",
         )}
       >
         <Section className="md:pt-24" id="about" sectionTitle="about">
