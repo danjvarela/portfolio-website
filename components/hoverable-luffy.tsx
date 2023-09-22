@@ -22,7 +22,7 @@ export default function HoverableLuffy() {
       <Portal>
         <Content
           className={cn(
-            "w-[320px] aspect-[2446/1370] bg-blue-1",
+            "w-[320px] aspect-[600/336] bg-mint-11",
             "p-2 rounded-xl",
           )}
           side="top"
@@ -36,7 +36,7 @@ export default function HoverableLuffy() {
               className="inset-0 m-0"
             />
           </div>
-          <Arrow className="fill-blue-1" />
+          <Arrow className="fill-mint-11" />
         </Content>
       </Portal>
     </Root>
