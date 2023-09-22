@@ -100,14 +100,6 @@ export default function Home() {
             ))}
           </div>
         </Section>
-        <div className="relative w-[320px] aspect-[320/240] rounded-lg overflow-hidden">
-          <Image
-            src="/luffy.gif"
-            alt="Wacky Luffy"
-            layout="fill"
-            objectFit="contain"
-          />
-        </div>
         <Copyright className="px-4 my-8 md:hidden" />
       </div>
     </div>
