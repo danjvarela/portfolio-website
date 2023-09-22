@@ -1,5 +1,7 @@
+import Project from '@/components/project';
 import Section from '@/components/section';
 import SocialLink from '@/components/social-link';
+import projects from '@/data/projects';
 import { cn } from '@/utils/cn';
 import Link from 'next/link';
 import { BsGithub, BsLinkedin } from 'react-icons/bs';
@@ -68,6 +70,13 @@ export default function Home() {
             or binge-watching One Piece. I'm on episode 882 now, eagerly waiting
             for all the action in the Land of Wano!
           </p>
+        </Section>
+        <Section id="projects" sectionTitle="projects">
+          <div className="flex flex-col w-full gap-4">
+            {projects.map((project) => (
+              <Project project={project} />
+            ))}
+          </div>
         </Section>
       </div>
     </div>

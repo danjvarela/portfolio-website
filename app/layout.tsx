@@ -26,7 +26,7 @@ export default function RootLayout({
           nunito.variable,
           instrumentSans.variable,
           'font-default min-h-screen prose prose-slate text-slate-11 max-w-none',
-          'bg-gradient-to-b from-blue-2 to-blue-1',
+          'bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-cyan-3 to-blue-1',
         )}
       >
         {children}

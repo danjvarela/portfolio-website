@@ -16,7 +16,7 @@ export default function Section({
       {...props}
     >
       {sectionTitle && (
-        <h1 className="md:hidden uppercase text-base sticky top-0 p-4 bg-slateA9 backdrop-blur-lg -mx-4">
+        <h1 className="md:hidden uppercase text-base sticky top-0 p-4 bg-transparent backdrop-blur-lg -mx-4">
           {sectionTitle}
         </h1>
       )}
