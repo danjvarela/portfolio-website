@@ -7,7 +7,6 @@ import { cn } from "@/utils/cn";
 import Link from "@/components/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
-import Image from "next/image";
 import HoverableLuffy from "@/components/hoverable-luffy";
 
 export default function Home() {
@@ -78,15 +77,30 @@ export default function Home() {
             <br />
             Jump to today, I&apos;m rocking a gig as a frontend developer in the
             Philippines. My daily tools of the trade?{" "}
-            <Link href="https://nextjs.org/">Next.js</Link>,{" "}
-            <Link href="https://react.dev/">React</Link>,{" "}
-            <Link href="https://tailwindcss.com/">Tailwind</Link>, and{" "}
-            <Link href="https://www.typescriptlang.org/">Typescript</Link>.
+            <Link href="https://nextjs.org/" target="_blank">
+              Next.js
+            </Link>
+            ,{" "}
+            <Link href="https://react.dev/" target="_blank">
+              React
+            </Link>
+            ,{" "}
+            <Link href="https://tailwindcss.com/" target="_blank">
+              Tailwind
+            </Link>
+            , and{" "}
+            <Link href="https://www.typescriptlang.org/" target="_blank">
+              Typescript
+            </Link>
+            .
             <br />
             <br />
             When I&apos;m not glued to my laptop, you&apos;ll find me strumming
             a guitar or binge-watching{" "}
-            <Link href="https://onepiece.fandom.com/wiki/One_Piece_Wiki">
+            <Link
+              href="https://onepiece.fandom.com/wiki/One_Piece_Wiki"
+              target="_blank"
+            >
               One Piece
             </Link>
             . I&apos;m on episode 882 now, eagerly waiting for all the action in
