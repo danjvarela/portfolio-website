@@ -7,6 +7,8 @@ import { cn } from "@/utils/cn";
 import Link from "@/components/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
+import Image from "next/image";
+import HoverableLuffy from "@/components/hoverable-luffy";
 
 export default function Home() {
   return (
@@ -75,13 +77,20 @@ export default function Home() {
             <br />
             <br />
             Jump to today, I&apos;m rocking a gig as a frontend developer in the
-            Philippines. My daily tools of the trade? Next.js, React, Tailwind,
-            and TypeScript.
+            Philippines. My daily tools of the trade?{" "}
+            <Link href="https://nextjs.org/">Next.js</Link>,{" "}
+            <Link href="https://react.dev/">React</Link>,{" "}
+            <Link href="https://tailwindcss.com/">Tailwind</Link>, and{" "}
+            <Link href="https://www.typescriptlang.org/">Typescript</Link>.
             <br />
             <br />
             When I&apos;m not glued to my laptop, you&apos;ll find me strumming
-            a guitar or binge-watching One Piece. I&apos;m on episode 882 now,
-            eagerly waiting for all the action in the Land of Wano!
+            a guitar or binge-watching{" "}
+            <Link href="https://onepiece.fandom.com/wiki/One_Piece_Wiki">
+              One Piece
+            </Link>
+            . I&apos;m on episode 882 now, eagerly waiting for all the action in
+            the <HoverableLuffy />!
           </p>
         </Section>
         <Section id="projects" sectionTitle="projects">
@@ -91,6 +100,14 @@ export default function Home() {
             ))}
           </div>
         </Section>
+        <div className="relative w-[320px] aspect-[320/240] rounded-lg overflow-hidden">
+          <Image
+            src="/luffy.gif"
+            alt="Wacky Luffy"
+            layout="fill"
+            objectFit="contain"
+          />
+        </div>
         <Copyright className="px-4 my-8 md:hidden" />
       </div>
     </div>
