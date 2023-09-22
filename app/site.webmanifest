@@ -1,0 +1,15 @@
+{
+  "name": "Dan Varela",
+  "short_name": "Dan Varela",
+  "description": "Dan Varela's portfolio website",
+  "icons": [
+    {
+      "src": "/android-chrome-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}
