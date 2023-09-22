@@ -20,4 +20,6 @@ const Link = React.forwardRef<
   );
 });
 
+Link.displayName = "Link";
+
 export default Link;
