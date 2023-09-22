@@ -9,7 +9,7 @@ export default function SocialLink({ href, icon }: SocialLinkProps) {
   return (
     <Link
       href={href}
-      className="text-2xl text-slate-11 hover:text-slate-12"
+      className="text-2xl text-slate-11 hover:text-slate-12 transition"
       target="_blank"
     >
       {icon}
