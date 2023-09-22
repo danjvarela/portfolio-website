@@ -5,5 +5,4 @@ Hello there! This is the source code of my [portfolio website].
 TODOS:
 
 - [ ] Setup site metadata
-- [ ] Create desktop layout
-- [ ] Create mobile layout
+- [ ] Construct site layout and add placeholders for components

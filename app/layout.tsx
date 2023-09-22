@@ -20,11 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="dark">
       <body
-        className={
-          (cn(nunito.variable, instrumentSans.variable), 'font-default')
-        }
+        className={cn(
+          nunito.variable,
+          instrumentSans.variable,
+          'font-default min-h-screen prose prose-slate text-slate-11 max-w-none',
+          'bg-gradient-to-b from-blue-2 to-blue-1',
+        )}
       >
         {children}
       </body>

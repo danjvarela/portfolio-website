@@ -10,15 +10,15 @@ const config: Config = {
     extend: {
       fontFamily: {
         default: 'var(--font-instrument)',
-        heading: 'var(--font-nunito)'
-      },
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        heading: 'var(--font-nunito)',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('windy-radix-palette'),
+    require('@tailwindcss/typography'),
+    require('windy-radix-typography'),
+  ],
+  darkMode: 'class',
 };
 export default config;
