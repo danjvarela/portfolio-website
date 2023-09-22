@@ -1,3 +1,4 @@
+import Copyright from '@/components/copyright';
 import Project from '@/components/project';
 import Section from '@/components/section';
 import SocialLink from '@/components/social-link';
@@ -16,7 +17,7 @@ export default function Home() {
     >
       <div
         className={cn(
-          'w-full h-fit',
+          'w-full h-fit flex flex-col',
           'md:w-1/2 md:max-w-lg md:h-screen md:fixed md:right-1/2 md:top-0',
         )}
       >
@@ -43,6 +44,7 @@ export default function Home() {
             </Link>
           </div>
         </Section>
+        <Copyright className="px-4 mb-7 hidden md:block" />
       </div>
 
       <div
@@ -78,6 +80,7 @@ export default function Home() {
             ))}
           </div>
         </Section>
+        <Copyright className="px-4 my-8 md:hidden" />
       </div>
     </div>
   );
