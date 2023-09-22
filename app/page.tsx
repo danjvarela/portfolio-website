@@ -25,8 +25,8 @@ export default function Home() {
           <h1 className="mb-2 text-mint-12">Dan Varela</h1>
           <h2 className="mt-0 text-mint-11">Web Developer</h2>
           <p className="mb-8">
-            Hi there! I'm a passionate web developer with a versatile skill set,
-            specializing in React.
+            Hi there! I&apos;m a passionate web developer with a versatile skill
+            set, specializing in React.
             <br />
             Explore my projects and see how I can help bring your digital ideas
             to life!
@@ -63,20 +63,20 @@ export default function Home() {
             web development.
             <br />
             <br />
-            Jump to today, I'm rocking a gig as a frontend developer in the
+            Jump to today, I&apos;m rocking a gig as a frontend developer in the
             Philippines. My daily tools of the trade? Next.js, React, Tailwind,
             and TypeScript.
             <br />
             <br />
-            When I'm not glued to my laptop, you'll find me strumming a guitar
-            or binge-watching One Piece. I'm on episode 882 now, eagerly waiting
-            for all the action in the Land of Wano!
+            When I&apos;m not glued to my laptop, you&apos;ll find me strumming
+            a guitar or binge-watching One Piece. I&apos;m on episode 882 now,
+            eagerly waiting for all the action in the Land of Wano!
           </p>
         </Section>
         <Section id="projects" sectionTitle="projects">
           <div className="flex flex-col w-full gap-4">
-            {projects.map((project) => (
-              <Project project={project} />
+            {projects.map((project, index) => (
+              <Project project={project} key={index} />
             ))}
           </div>
         </Section>
