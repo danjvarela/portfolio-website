@@ -6,6 +6,7 @@ import projects from "@/data/projects";
 import { cn } from "@/utils/cn";
 import Link from "next/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
+import { SiGmail } from "react-icons/si";
 
 export default function Home() {
   return (
@@ -31,9 +32,19 @@ export default function Home() {
             Explore my projects and see how I can help bring your digital ideas
             to life!
           </p>
-          <div className="flex gap-4 mb-4 md:mb-8">
-            <SocialLink href="#" icon={<BsGithub />} />
-            <SocialLink href="#" icon={<BsLinkedin />} />
+          <div className="flex gap-4 mb-4 md:mb-12">
+            <SocialLink
+              href="https://github.com/danjvarela"
+              icon={<BsGithub />}
+            />
+            <SocialLink
+              href="https://www.linkedin.com/in/danmar-varela-8097a9242"
+              icon={<BsLinkedin />}
+            />
+            <SocialLink
+              href="mailto:work.danmarvarela@gmail.com"
+              icon={<SiGmail />}
+            />
           </div>
           <div className="hidden md:flex flex-col gap-2">
             <Link href="#about" className="">
