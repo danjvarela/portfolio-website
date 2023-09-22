@@ -4,7 +4,7 @@ import Section from "@/components/section";
 import SocialLink from "@/components/social-link";
 import projects from "@/data/projects";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
+import Link from "@/components/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
 import { SiGmail } from "react-icons/si";
 

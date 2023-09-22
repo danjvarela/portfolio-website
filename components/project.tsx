@@ -1,6 +1,6 @@
 import type { Project as ProjectType } from "@/data/projects";
 import { cn } from "@/utils/cn";
-import Link from "next/link";
+import Link from "@/components/link";
 
 type ProjectProps = { project: ProjectType };
 
