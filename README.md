@@ -1,8 +1,4 @@
 # Dan's Portfolio
 
-Hello there! This is the source code of my [portfolio website].
+Hello there! This is the source code of my [portfolio website](https://www.danvarela.com) (still in progress at the moment) made using Next.js, React, Typescript, and Tailwindcss.
 
-TODOS:
-
-- [ ] Setup site metadata
-- [ ] Construct site layout and add placeholders for components
