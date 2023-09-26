@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Nunito_Sans, Instrument_Sans } from "next/font/google";
 import { cn } from "@/utils/cn";
+import { Analytics } from "@vercel/analytics/react";
 
 const nunito = Nunito_Sans({ subsets: ["latin"], variable: "--font-nunito" });
 const instrumentSans = Instrument_Sans({
@@ -30,6 +31,7 @@ export default function RootLayout({
         )}
       >
         {children}
+        <Analytics />
       </body>
     </html>
   );
