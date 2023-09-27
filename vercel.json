@@ -1,9 +1,0 @@
-{
-  "rewrites": [
-    {
-      "source": "/projects/chess/:subdir*",
-      "destination": "https://chess-danjvarela.vercel.app/:subdir*"
-    },
-    { "source": "/(.*)", "destination": "/" }
-  ]
-}
