@@ -6,7 +6,7 @@ import projects from "@/data/projects";
 import { cn } from "@/utils/cn";
 import Link from "@/components/link";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
-import { SiGmail } from "react-icons/si";
+import { MdEmail } from "react-icons/md";
 import HoverableLuffy from "@/components/hoverable-luffy";
 
 export default function Home() {
@@ -33,7 +33,7 @@ export default function Home() {
             Explore my projects and see how I can help bring your digital ideas
             to life!
           </p>
-          <div className="flex gap-4 mb-4 md:mb-12">
+          <div className="flex gap-4 mb-4 md:mb-12 items-center">
             <SocialLink
               href="https://github.com/danjvarela"
               icon={<BsGithub />}
@@ -43,8 +43,8 @@ export default function Home() {
               icon={<BsLinkedin />}
             />
             <SocialLink
-              href="mailto:work.danmarvarela@gmail.com"
-              icon={<SiGmail />}
+              href="mailto:dan@danvarela.com"
+              icon={<MdEmail className="w-8 h-8"/>}
             />
           </div>
           <div className="hidden md:flex flex-col gap-2">
