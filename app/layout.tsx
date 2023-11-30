@@ -24,7 +24,7 @@ export default function RootLayout({
           gochi.className,
           inter.variable,
           "dark:text-rx-slatedark12 text-rx-slatelight12",
-          "dark:bg-rx-slatedark2 bg-rx-slatelight2",
+          "dark:bg-rx-slatedark2 bg-rx-slatelight2 h-screen",
         )}
       >
         <Providers>{children}</Providers>

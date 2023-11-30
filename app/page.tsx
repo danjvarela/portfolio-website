@@ -3,9 +3,14 @@ import NavLink from "@/components/home/nav-link";
 import ThemeSwitcher from "@/components/theme-switcher";
 import { cn } from "@/lib/utils";
 import { Linkedin, LucideProps, Twitter, Mail } from "lucide-react";
+import { ComponentProps } from "react";
 
 const iconProps: LucideProps = {
   className: "w-4 h-4 mb-[2px]",
+};
+
+const sectionProps: ComponentProps<"section"> = {
+  className: "before:block before:h-24",
 };
 
 export default function Home() {
@@ -17,7 +22,7 @@ export default function Home() {
           "flex justify-end z-50",
         )}
       >
-        <div className="w-full max-w-lg h-full pt-24 pb-12 flex flex-col justify-between">
+        <div className="w-full max-w-2xl h-full pt-24 pb-12 flex flex-col justify-between">
           <div>
             <div className="text-6xl">
               Hello, I'm <GradientText>DAN.</GradientText>
@@ -28,10 +33,10 @@ export default function Home() {
           </div>
 
           <div className="flex flex-col gap-4">
-            <NavLink text="About me" />
-            <NavLink text="My works" />
-            <NavLink text="Blogs" />
-            <NavLink text="Resume" />
+            <NavLink text="About me" href="#about-me" />
+            <NavLink text="My works" href="#my-works" />
+            <NavLink text="Blogs" href="#blogs" />
+            <NavLink text="Resume" href="#resume" />
           </div>
 
           <div className="flex flex-col gap-4">
@@ -57,12 +62,42 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex justify-end">
-        <div className="w-1/2 px-8 pt-24 pb-20 flex flex-col gap-20">
-          <section>
-            <h1 className="text-4xl mb-8" id="about-me">
-              About me
-            </h1>
+      <div
+        className="w-full flex h-full max-h-full overflow-y-auto"
+        style={{
+          scrollBehavior: "smooth",
+        }}
+      >
+        <div className="w-1/2 max-w-2xl ml-[50%] px-12 pb-20 flex flex-col text-justify h-fit">
+          <section id="about-me" {...sectionProps}>
+            <h1 className="text-4xl mb-8">About me</h1>
+            <p className="font-sans">
+              My journey started in a job dealing with lots of Excel sheets. It
+              was a snooze until I discovered cool Excel tricks using Visual
+              Basic. That's when I got hooked on programming.
+              <br />
+              <br />
+              Now, I'm rocking it as a frontend developer here in the
+              Philippines. I play around with Typescript, React, and Next.js to
+              make awesome stuff. I'm always hungry to learn more techie things.
+              Come hang out on my blog and see what I'm up to!
+              <br />
+              <br />
+              Check out my past projects below. They're like my online resume.
+              Need someone passionate for your team? I'm your guy. Let's team up
+              and make some web magic. Pretty please, hire me?
+              <br />
+              <br />
+              Catch you later!
+              <br />
+              <br />
+              ...Oh!, did I mention, I like cats? Yeah. I also watch anime or
+              play guitar in my free time.
+            </p>
+          </section>
+
+          <section id="my-works" {...sectionProps}>
+            <h1 className="text-4xl mb-8">My works</h1>
             <p className="font-sans">
               Lorem ipsum dolor sit amet, officia excepteur ex fugiat
               reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
@@ -79,27 +114,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section>
-            <h1 className="text-4xl mb-8" id="my-works">
-              My works
-            </h1>
-            <p className="font-sans">
-              Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-              reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
-              ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
-              Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet
-              voluptate voluptate dolor minim nulla est proident. Nostrud
-              officia pariatur ut officia. Sit irure elit esse ea nulla sunt ex
-              occaecat reprehenderit commodo officia dolor Lorem duis laboris
-              cupidatat officia voluptate. Culpa proident adipisicing id nulla
-              nisi laboris ex in Lorem sunt duis officia eiusmod. Aliqua
-              reprehenderit commodo ex non excepteur duis sunt velit enim.
-              Voluptate laboris sint cupidatat ullamco ut ea consectetur et est
-              culpa et culpa duis.
-            </p>
-          </section>
-
-          <section>
+          <section id="blogs" {...sectionProps}>
             <h1 className="text-4xl mb-8" id="my-works">
               Blogs
             </h1>
@@ -119,7 +134,7 @@ export default function Home() {
             </p>
           </section>
 
-          <section>
+          <section id="resume" {...sectionProps}>
             <h1 className="text-4xl mb-8" id="my-works">
               Resume
             </h1>
