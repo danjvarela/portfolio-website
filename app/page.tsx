@@ -1,26 +1,59 @@
-import ThemeSwitcher from "@/components/theme-switcher";
+import GradientText from "@/components/gradient-text";
+import NavLink from "@/components/home/nav-link";
 import { cn } from "@/lib/utils";
+import { Linkedin, LucideProps, Twitter, Mail } from "lucide-react";
+
+const iconProps: LucideProps = {
+  className: "w-4 h-4 mb-[2px]",
+};
 
 export default function Home() {
   return (
     <>
-      <div className="fixed w-[28rem] h-screen border right-1/2 pt-16 px-4">
-        <div
-          className={cn(
-            "font-extrabold text-transparent text-6xl bg-clip-text bg-gradient-to-r from-rx-cyanlight9 to-rx-cyanlight12",
-            "dark:from-rx-cyandark9 dark:to-rx-cyandark12",
-          )}
-        >
-          Dan Varela
-        </div>
-        <div className="font-bold text-transparent text-4xl bg-clip-text bg-gradient-to-r from-rx-cyanlight9 to-rx-cyanlight12">
-          Web Developer
-        </div>
-      </div>
+      <div
+        className={cn(
+          "fixed inset-0 w-1/2 dark:bg-rx-slatedark1 bg-rx-slatelight1",
+          "flex justify-end",
+        )}
+      >
+        <div className="w-full max-w-lg h-full pt-24 pb-12 flex flex-col justify-between">
+          <div>
+            <div className="text-6xl">
+              Hello, I'm <GradientText>DAN.</GradientText>
+            </div>
+            <div className="text-2xl">
+              I build stuff for the web and I love cats &#x1F43E;.
+            </div>
+          </div>
 
-      <div className="w-[28rem] h-[300vh] border ml-[50%]"></div>
-      <div className="fixed bottom-12 right-8">
-        <ThemeSwitcher />
+          <div className="flex flex-col gap-4">
+            <NavLink text="About me" />
+            <NavLink text="My works" />
+            <NavLink text="Blogs" />
+            <NavLink text="Resume" />
+          </div>
+
+          <div className="flex flex-col gap-4">
+            <div className="text-2xl">Reach me out</div>
+            <div className="flex gap-8">
+              <NavLink
+                text="Linkedin"
+                className="text-lg"
+                icon={<Linkedin {...iconProps} />}
+              />
+              <NavLink
+                text="Twitter"
+                className="text-lg"
+                icon={<Twitter {...iconProps} />}
+              />
+              <NavLink
+                text="Email"
+                className="text-lg"
+                icon={<Mail {...iconProps} />}
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );

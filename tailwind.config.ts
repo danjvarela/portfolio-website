@@ -27,6 +27,11 @@ const rColors = {
   ...renameKeys("slate", radixColors.slateA),
   ...renameKeys("slate", radixColors.slateDark, "dark"),
   ...renameKeys("slate", radixColors.slateDarkA, "dark"),
+
+  ...renameKeys("purple", radixColors.purple),
+  ...renameKeys("purple", radixColors.purpleA),
+  ...renameKeys("purple", radixColors.purpleDark, "dark"),
+  ...renameKeys("purple", radixColors.purpleDarkA, "dark"),
 };
 
 const config: Config = {
