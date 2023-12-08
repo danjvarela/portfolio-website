@@ -91,7 +91,7 @@ export default function Home() {
               Catch you later!
               <br />
               <br />
-              ...Oh!, did I mention, I like cats? Yeah. I also watch anime or
+              ...Oh! did I mention, I like cats? Yeah, such majestic balls of fur. I also watch anime or
               play guitar in my free time.
             </p>
           </section>
