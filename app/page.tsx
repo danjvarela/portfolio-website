@@ -3,8 +3,7 @@
 import GradientText from "@/components/gradient-text";
 import NavLink from "@/components/home/nav-link";
 import { Separator } from "@/components/ui/separator";
-
-const headerHeight = 60;
+import { headerHeight } from "@/lib/constants";
 
 export default function HomePage() {
   return (
