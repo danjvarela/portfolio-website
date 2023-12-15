@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Gochi_Hand, Inter } from "next/font/google";
 import Providers from "./providers";
+import { createClient } from "@/prismicio";
 
 const gochi = Gochi_Hand({
   subsets: ["latin"],
@@ -11,10 +12,21 @@ const gochi = Gochi_Hand({
 });
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
-export const metadata: Metadata = {
-  title: "Dan Varela",
-  description: "Dan Varela's Portfolio Website",
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const client = createClient();
+
+  const settings = await client.getSingle("settings");
+
+  return {
+    title: settings.data.site_title || "Dan Varela",
+    description:
+      settings.data.site_description ||
+      "Dan Varela's Portfolio Website and Blog",
+    openGraph: {
+      images: [settings.data.og_image.url || ""],
+    },
+  };
+}
 
 export default function RootLayout({
   children,

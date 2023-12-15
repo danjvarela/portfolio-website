@@ -5,96 +5,98 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
- * Item in *Settings → Navigation*
+ * Item in *Settings → Navigations*
  */
-export interface SettingDocumentDataNavigationItem {
+export interface SettingsDocumentDataNavigationsItem {
   /**
-   * Text field in *Settings → Navigation*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: setting.navigation[].text
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  text: prismic.KeyTextField;
-
-  /**
-   * URL field in *Settings → Navigation*
+   * URL field in *Settings → Navigations*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: setting.navigation[].url
+   * - **API ID Path**: settings.navigations[].url
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
   url: prismic.LinkField;
+
+  /**
+   * Text field in *Settings → Navigations*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.navigations[].text
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  text: prismic.KeyTextField;
 }
 
 /**
  * Content for Settings documents
  */
-interface SettingDocumentData {
+interface SettingsDocumentData {
   /**
-   * Title field in *Settings*
+   * Site Title field in *Settings*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: setting.title
+   * - **API ID Path**: settings.site_title
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  title: prismic.KeyTextField;
+  site_title: prismic.KeyTextField;
 
   /**
-   * Description field in *Settings*
+   * Site Description field in *Settings*
    *
    * - **Field Type**: Text
    * - **Placeholder**: *None*
-   * - **API ID Path**: setting.description
+   * - **API ID Path**: settings.site_description
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#key-text
    */
-  description: prismic.KeyTextField;
+  site_description: prismic.KeyTextField;
 
   /**
    * OG Image field in *Settings*
    *
    * - **Field Type**: Image
    * - **Placeholder**: *None*
-   * - **API ID Path**: setting.og_image
+   * - **API ID Path**: settings.og_image
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#image
    */
   og_image: prismic.ImageField<never>;
 
   /**
-   * Navigation field in *Settings*
+   * Navigations field in *Settings*
    *
    * - **Field Type**: Group
    * - **Placeholder**: *None*
-   * - **API ID Path**: setting.navigation[]
+   * - **API ID Path**: settings.navigations[]
    * - **Tab**: Main
    * - **Documentation**: https://prismic.io/docs/field#group
    */
-  navigation: prismic.GroupField<Simplify<SettingDocumentDataNavigationItem>>;
+  navigations: prismic.GroupField<
+    Simplify<SettingsDocumentDataNavigationsItem>
+  >;
 }
 
 /**
  * Settings document from Prismic
  *
- * - **API ID**: `setting`
+ * - **API ID**: `settings`
  * - **Repeatable**: `false`
  * - **Documentation**: https://prismic.io/docs/custom-types
  *
  * @typeParam Lang - Language API ID of the document.
  */
-export type SettingDocument<Lang extends string = string> =
+export type SettingsDocument<Lang extends string = string> =
   prismic.PrismicDocumentWithoutUID<
-    Simplify<SettingDocumentData>,
-    "setting",
+    Simplify<SettingsDocumentData>,
+    "settings",
     Lang
   >;
 
-export type AllDocumentTypes = SettingDocument;
+export type AllDocumentTypes = SettingsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -106,9 +108,9 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      SettingDocument,
-      SettingDocumentData,
-      SettingDocumentDataNavigationItem,
+      SettingsDocument,
+      SettingsDocumentData,
+      SettingsDocumentDataNavigationsItem,
       AllDocumentTypes,
     };
   }
