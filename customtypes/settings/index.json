@@ -33,10 +33,10 @@
         "config": {
           "label": "Navigations",
           "fields": {
-            "url": {
+            "link": {
               "type": "Link",
               "config": {
-                "label": "URL",
+                "label": "Link",
                 "placeholder": "",
                 "allowTargetBlank": true,
                 "select": null

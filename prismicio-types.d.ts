@@ -9,14 +9,14 @@ type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
  */
 export interface SettingsDocumentDataNavigationsItem {
   /**
-   * URL field in *Settings → Navigations*
+   * Link field in *Settings → Navigations*
    *
    * - **Field Type**: Link
    * - **Placeholder**: *None*
-   * - **API ID Path**: settings.navigations[].url
+   * - **API ID Path**: settings.navigations[].link
    * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
    */
-  url: prismic.LinkField;
+  link: prismic.LinkField;
 
   /**
    * Text field in *Settings → Navigations*

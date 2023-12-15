@@ -1,7 +1,7 @@
 "use client";
 
 import GradientText from "@/components/gradient-text";
-import NavLink from "@/components/nav-link";
+import { NavLink } from "@/components/nav-link";
 import { Separator } from "@/components/ui/separator";
 import { headerHeight } from "@/lib/constants";
 import { motion } from "framer-motion";
