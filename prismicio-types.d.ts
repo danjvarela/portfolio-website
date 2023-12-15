@@ -78,6 +78,17 @@ interface SettingsDocumentData {
   navigations: prismic.GroupField<
     Simplify<SettingsDocumentDataNavigationsItem>
   >;
+
+  /**
+   * Introduction Message field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.introduction_message
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  introduction_message: prismic.KeyTextField;
 }
 
 /**

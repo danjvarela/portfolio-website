@@ -39,8 +39,7 @@ export default function RootLayout({
         className={cn(
           gochi.variable,
           inter.variable,
-          "font-sans dark:text-rx-slatedark12 text-rx-slatelight12",
-          "dark:bg-rx-slatedark2 bg-rx-slatelight2",
+          "font-sans text-rx-slatedark12 bg-rx-slatedark2",
         )}
       >
         <Providers>{children}</Providers>
