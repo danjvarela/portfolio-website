@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 import Section from "@/components/layout/section";
 import { cn } from "@/lib/utils";
 import Work from "@/components/work";
-import { Facebook, Linkedin, Mail } from "lucide-react";
 import {
   SiFacebook,
   SiGmail,
@@ -42,8 +41,6 @@ export default function HomePage() {
           <Separator orientation="vertical" />
           <NavLink text="My works" href="#my-works" />
           <Separator orientation="vertical" />
-          {/* <NavLink text="Blogs" href="#blogs" /> */}
-          {/* <Separator orientation="vertical" /> */}
           <NavLink text="Contact me" href="#contact-me" />
         </motion.div>
         <div
