@@ -7,7 +7,7 @@ import { headerHeight } from "@/lib/constants";
 import { motion } from "framer-motion";
 import Section from "@/components/layout/section";
 import { cn } from "@/lib/utils";
-import Work from "@/components/work";
+import Work from "@/components/project";
 import {
   SiFacebook,
   SiGmail,
