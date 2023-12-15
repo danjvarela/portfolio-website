@@ -47,6 +47,67 @@ export type AboutMeDocument<Lang extends string = string> =
     Lang
   >;
 
+type HomeDocumentDataSlicesSlice = IntroductionSlice;
+
+/**
+ * Content for Home documents
+ */
+interface HomeDocumentData {
+  /**
+   * Slice Zone field in *Home*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.slices[]
+   * - **Tab**: Home
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<HomeDocumentDataSlicesSlice> /**
+   * Meta Description field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: home.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Home*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: home.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+
+  /**
+   * Meta Title field in *Home*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: home.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_title: prismic.KeyTextField;
+}
+
+/**
+ * Home document from Prismic
+ *
+ * - **API ID**: `home`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type HomeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<Simplify<HomeDocumentData>, "home", Lang>;
+
 /**
  * Item in *Settings → Navigations*
  */
@@ -121,17 +182,6 @@ interface SettingsDocumentData {
   navigations: prismic.GroupField<
     Simplify<SettingsDocumentDataNavigationsItem>
   >;
-
-  /**
-   * Introduction Message field in *Settings*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: settings.introduction_message
-   * - **Tab**: Main
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  introduction_message: prismic.KeyTextField;
 }
 
 /**
@@ -150,7 +200,55 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = AboutMeDocument | SettingsDocument;
+export type AllDocumentTypes =
+  | AboutMeDocument
+  | HomeDocument
+  | SettingsDocument;
+
+/**
+ * Primary content in *Introduction → Primary*
+ */
+export interface IntroductionSliceDefaultPrimary {
+  /**
+   * Introduction Message field in *Introduction → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: introduction.primary.introduction_message
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  introduction_message: prismic.KeyTextField;
+}
+
+/**
+ * Default variation for Introduction Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroductionSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<IntroductionSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *Introduction*
+ */
+type IntroductionSliceVariation = IntroductionSliceDefault;
+
+/**
+ * Introduction Shared Slice
+ *
+ * - **API ID**: `introduction`
+ * - **Description**: Introduction
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type IntroductionSlice = prismic.SharedSlice<
+  "introduction",
+  IntroductionSliceVariation
+>;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -164,10 +262,17 @@ declare module "@prismicio/client" {
     export type {
       AboutMeDocument,
       AboutMeDocumentData,
+      HomeDocument,
+      HomeDocumentData,
+      HomeDocumentDataSlicesSlice,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationsItem,
       AllDocumentTypes,
+      IntroductionSlice,
+      IntroductionSliceDefaultPrimary,
+      IntroductionSliceVariation,
+      IntroductionSliceDefault,
     };
   }
 }

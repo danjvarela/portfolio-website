@@ -1,0 +1,14 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"introduction_message": {
+				"__TYPE__": "FieldContent",
+				"value": "cast",
+				"type": "Text"
+			}
+		},
+		"items": []
+	}
+]

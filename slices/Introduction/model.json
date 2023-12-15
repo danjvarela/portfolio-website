@@ -1,0 +1,26 @@
+{
+  "id": "introduction",
+  "type": "SharedSlice",
+  "name": "Introduction",
+  "description": "Introduction",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "introduction_message": {
+          "type": "Text",
+          "config": {
+            "label": "Introduction Message",
+            "placeholder": ""
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}

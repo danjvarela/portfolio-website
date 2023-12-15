@@ -51,13 +51,6 @@
             }
           }
         }
-      },
-      "introduction_message": {
-        "type": "Text",
-        "config": {
-          "label": "Introduction Message",
-          "placeholder": ""
-        }
       }
     }
   }
