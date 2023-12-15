@@ -7,10 +7,14 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettier": "pnpm exec prettier . --write"
+    "prettier": "pnpm exec prettier . --write",
+    "slicemachine": "start-slicemachine"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^9.2.0",
+    "@prismicio/client": "^7.3.1",
+    "@prismicio/next": "^1.5.0",
+    "@prismicio/react": "^2.7.3",
     "@radix-ui/colors": "^3.0.0",
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-slot": "^1.0.2",
@@ -34,10 +38,12 @@
     "usehooks-ts": "^2.9.1"
   },
   "devDependencies": {
+    "@slicemachine/adapter-next": "^0.3.30",
     "@tailwindcss/typography": "^0.5.10",
     "autoprefixer": "10.4.15",
     "postcss": "8.4.29",
     "prettier": "3.1.0",
+    "slice-machine-ui": "^1.22.0",
     "tailwindcss": "3.3.3"
   }
 }
