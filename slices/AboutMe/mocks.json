@@ -1,0 +1,67 @@
+[
+	{
+		"__TYPE__": "SharedSliceContent",
+		"variation": "default",
+		"primary": {
+			"section_id": {
+				"__TYPE__": "FieldContent",
+				"type": "Text",
+				"value": "About Me"
+			},
+			"content": {
+				"__TYPE__": "StructuredTextContent",
+				"value": [
+					{
+						"type": "heading1",
+						"content": {
+							"text": "About Me",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "My journey started in a job dealing with lots of Excel sheets. It was a snooze until I discovered cool Excel tricks using Visual Basic. That's when I got hooked on programming.",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Now, I'm rocking it as a frontend developer here in the Philippines. I play around with Typescript, React, and Next.js to make awesome stuff. I'm always hungry to learn more techie things. Come hang out on my blog and see what I'm up to!",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Check out my past projects below. They're like my online resume. Need someone passionate for your team? I'm your guy. Let's team up and make some web magic. Pretty please, hire me?",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "Catch you later!",
+							"spans": []
+						},
+						"direction": "ltr"
+					},
+					{
+						"type": "paragraph",
+						"content": {
+							"text": "...Oh! did I mention, I like cats? Yeah, such majestic balls of fur. I also watch anime or play guitar in my free time.",
+							"spans": []
+						},
+						"direction": "ltr"
+					}
+				]
+			}
+		},
+		"items": []
+	}
+]

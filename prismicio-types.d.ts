@@ -4,50 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-/**
- * Content for About Me documents
- */
-interface AboutMeDocumentData {
-  /**
-   * Content field in *About Me*
-   *
-   * - **Field Type**: Rich Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_me.content
-   * - **Tab**: About me
-   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
-   */
-  content: prismic.RichTextField;
-
-  /**
-   * Section ID field in *About Me*
-   *
-   * - **Field Type**: Text
-   * - **Placeholder**: *None*
-   * - **API ID Path**: about_me.section_id
-   * - **Tab**: About me
-   * - **Documentation**: https://prismic.io/docs/field#key-text
-   */
-  section_id: prismic.KeyTextField;
-}
-
-/**
- * About Me document from Prismic
- *
- * - **API ID**: `about_me`
- * - **Repeatable**: `false`
- * - **Documentation**: https://prismic.io/docs/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type AboutMeDocument<Lang extends string = string> =
-  prismic.PrismicDocumentWithoutUID<
-    Simplify<AboutMeDocumentData>,
-    "about_me",
-    Lang
-  >;
-
-type HomeDocumentDataSlicesSlice = IntroductionSlice;
+type HomeDocumentDataSlicesSlice = AboutMeSlice | IntroductionSlice;
 
 /**
  * Content for Home documents
@@ -200,10 +157,62 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes =
-  | AboutMeDocument
-  | HomeDocument
-  | SettingsDocument;
+export type AllDocumentTypes = HomeDocument | SettingsDocument;
+
+/**
+ * Primary content in *AboutMe → Primary*
+ */
+export interface AboutMeSliceDefaultPrimary {
+  /**
+   * Section ID field in *AboutMe → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.primary.section_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_id: prismic.KeyTextField;
+
+  /**
+   * Content field in *AboutMe → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.primary.content
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Default variation for AboutMe Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMeSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<AboutMeSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *AboutMe*
+ */
+type AboutMeSliceVariation = AboutMeSliceDefault;
+
+/**
+ * AboutMe Shared Slice
+ *
+ * - **API ID**: `about_me`
+ * - **Description**: AboutMe
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type AboutMeSlice = prismic.SharedSlice<
+  "about_me",
+  AboutMeSliceVariation
+>;
 
 /**
  * Primary content in *Introduction → Primary*
@@ -260,8 +269,6 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
-      AboutMeDocument,
-      AboutMeDocumentData,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -269,6 +276,10 @@ declare module "@prismicio/client" {
       SettingsDocumentData,
       SettingsDocumentDataNavigationsItem,
       AllDocumentTypes,
+      AboutMeSlice,
+      AboutMeSliceDefaultPrimary,
+      AboutMeSliceVariation,
+      AboutMeSliceDefault,
       IntroductionSlice,
       IntroductionSliceDefaultPrimary,
       IntroductionSliceVariation,

@@ -1,9 +1,8 @@
-import AboutMe from "@/components/home/about-me";
 import Header from "@/components/layout/header";
 import { SliceZone } from "@prismicio/react";
 import { components } from "@/slices";
 import { createClient } from "@/prismicio";
-import { pick } from "lodash";
+import { pick, omit } from "lodash";
 
 export default async function HomePage() {
   const client = createClient();
@@ -20,7 +19,13 @@ export default async function HomePage() {
 
       <div className="relative">
         <Header />
-        <AboutMe />
+
+        <SliceZone
+          slices={page.data.slices.filter(
+            (slice) => slice.slice_type !== "introduction",
+          )}
+          components={omit(components, "introduction")}
+        />
       </div>
     </div>
   );
