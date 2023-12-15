@@ -8,6 +8,13 @@ import { motion } from "framer-motion";
 import Section from "@/components/layout/section";
 import { cn } from "@/lib/utils";
 import Work from "@/components/work";
+import { Facebook, Linkedin, Mail } from "lucide-react";
+import {
+  SiFacebook,
+  SiGmail,
+  SiLinkedin,
+  SiTelegram,
+} from "@icons-pack/react-simple-icons";
 
 export default function HomePage() {
   return (
@@ -35,8 +42,8 @@ export default function HomePage() {
           <Separator orientation="vertical" />
           <NavLink text="My works" href="#my-works" />
           <Separator orientation="vertical" />
-          <NavLink text="Blogs" href="#blogs" />
-          <Separator orientation="vertical" />
+          {/* <NavLink text="Blogs" href="#blogs" /> */}
+          {/* <Separator orientation="vertical" /> */}
           <NavLink text="Contact me" href="#contact-me" />
         </motion.div>
         <div
@@ -84,22 +91,36 @@ export default function HomePage() {
           </div>
         </Section>
 
-        <Section id="blogs">
-          <h1>Blogs</h1>
-          <p>
-            Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-            reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
-            ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
-            Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate
-            voluptate dolor minim nulla est proident. Nostrud officia pariatur
-            ut officia. Sit irure elit esse ea nulla sunt ex occaecat
-            reprehenderit commodo officia dolor Lorem duis laboris cupidatat
-            officia voluptate. Culpa proident adipisicing id nulla nisi laboris
-            ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo
-            ex non excepteur duis sunt velit enim. Voluptate laboris sint
-            cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-          </p>
+        <Section id="contact-me" className="mb-8">
+          <h1>Let's keep in touch</h1>
+          <div className="flex gap-8 flex-wrap not-prose font-gochi text-xl">
+            <NavLink
+              text="LinkedIn"
+              href=""
+              icon={<SiLinkedin className="w-4 h-4 mb-1" />}
+            />
+            <NavLink
+              text="Facebook"
+              href="#my-works"
+              icon={<SiFacebook className="w-4 h-4 mb-1" />}
+            />
+            <NavLink
+              text="Email"
+              href=""
+              icon={<SiGmail className="w-4 h-4 mb-1" />}
+            />
+            <NavLink
+              text="Telegram"
+              href=""
+              icon={<SiTelegram className="w-4 h-4 mb-1" />}
+            />
+          </div>
         </Section>
+
+        <footer className="max-w-2xl h-full mx-auto p-4 prose">
+          <Separator orientation="horizontal" className="mb-4" />
+          <p>Made with Next.js, TailwindCSS, and Radix UI</p>
+        </footer>
       </div>
     </div>
   );
