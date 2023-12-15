@@ -1,12 +1,13 @@
 "use client";
 
 import GradientText from "@/components/gradient-text";
-import NavLink from "@/components/home/nav-link";
+import NavLink from "@/components/nav-link";
 import { Separator } from "@/components/ui/separator";
 import { headerHeight } from "@/lib/constants";
 import { motion } from "framer-motion";
 import Section from "@/components/layout/section";
 import { cn } from "@/lib/utils";
+import Work from "@/components/work";
 
 export default function HomePage() {
   return (
@@ -25,7 +26,7 @@ export default function HomePage() {
         <motion.div
           className={cn(
             "flex gap-4 items-center justify-center py-4 sticky top-0 text-sm md:text-xl font-gochi",
-            "bg-rx-slatelight2/75 dark:bg-rx-slatedark2/75 backdrop-blur",
+            "bg-rx-slatelight2/75 dark:bg-rx-slatedark2/75 backdrop-blur z-50",
           )}
           layoutId="header"
           style={{ height: headerHeight }}
@@ -46,7 +47,7 @@ export default function HomePage() {
         />
         <Section id="about-me">
           <h1>About me</h1>
-          <p className="font-sans">
+          <p>
             My journey started in a job dealing with lots of Excel sheets. It
             was a snooze until I discovered cool Excel tricks using Visual
             Basic. That's when I got hooked on programming.
@@ -75,19 +76,12 @@ export default function HomePage() {
 
         <Section id="my-works">
           <h1>My Works</h1>
-          <p>
-            Lorem ipsum dolor sit amet, officia excepteur ex fugiat
-            reprehenderit enim labore culpa sint ad nisi Lorem pariatur mollit
-            ex esse exercitation amet. Nisi anim cupidatat excepteur officia.
-            Reprehenderit nostrud nostrud ipsum Lorem est aliquip amet voluptate
-            voluptate dolor minim nulla est proident. Nostrud officia pariatur
-            ut officia. Sit irure elit esse ea nulla sunt ex occaecat
-            reprehenderit commodo officia dolor Lorem duis laboris cupidatat
-            officia voluptate. Culpa proident adipisicing id nulla nisi laboris
-            ex in Lorem sunt duis officia eiusmod. Aliqua reprehenderit commodo
-            ex non excepteur duis sunt velit enim. Voluptate laboris sint
-            cupidatat ullamco ut ea consectetur et est culpa et culpa duis.
-          </p>
+          <div className="flex flex-col gap-8">
+            <Work />
+            <Work />
+            <Work />
+            <Work />
+          </div>
         </Section>
 
         <Section id="blogs">

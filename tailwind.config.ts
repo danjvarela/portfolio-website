@@ -52,7 +52,7 @@ const config: Config = {
         return {
           DEFAULT: {
             css: {
-              "--tw-prose-body": rColors["rx-slatelight12"],
+              "--tw-prose-body": rColors["rx-slatelight11"],
               "--tw-prose-headings": rColors["rx-slatelight12"],
               "--tw-prose-lead": rColors["rx-slatelight12"],
               "--tw-prose-links": rColors["rx-slatelight12"],
@@ -68,7 +68,7 @@ const config: Config = {
               "--tw-prose-pre-bg": rColors["rx-slatelight12"],
               "--tw-prose-th-borders": rColors["rx-slatelight7"],
               "--tw-prose-td-borders": rColors["rx-slatelight7"],
-              "--tw-prose-invert-body": rColors["rx-slatedark12"],
+              "--tw-prose-invert-body": rColors["rx-slatedark11"],
               "--tw-prose-invert-headings": rColors["rx-slatedark12"],
               "--tw-prose-invert-lead": rColors["rx-slatedark12"],
               "--tw-prose-invert-links": rColors["rx-slatedark12"],

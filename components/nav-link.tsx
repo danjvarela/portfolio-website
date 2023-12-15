@@ -5,7 +5,7 @@ import { ComponentProps } from "react";
 type Props = Omit<ComponentProps<typeof Link>, "href" | "children"> & {
   href?: string;
   text: string;
-  icon?: JSX.Element
+  icon?: JSX.Element;
 };
 
 export default function NavLink({
