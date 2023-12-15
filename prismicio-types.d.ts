@@ -5,6 +5,49 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
 /**
+ * Content for About Me documents
+ */
+interface AboutMeDocumentData {
+  /**
+   * Content field in *About Me*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.content
+   * - **Tab**: About me
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+
+  /**
+   * Section ID field in *About Me*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: about_me.section_id
+   * - **Tab**: About me
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_id: prismic.KeyTextField;
+}
+
+/**
+ * About Me document from Prismic
+ *
+ * - **API ID**: `about_me`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type AboutMeDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<AboutMeDocumentData>,
+    "about_me",
+    Lang
+  >;
+
+/**
  * Item in *Settings → Navigations*
  */
 export interface SettingsDocumentDataNavigationsItem {
@@ -107,7 +150,7 @@ export type SettingsDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = SettingsDocument;
+export type AllDocumentTypes = AboutMeDocument | SettingsDocument;
 
 declare module "@prismicio/client" {
   interface CreateClient {
@@ -119,6 +162,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      AboutMeDocument,
+      AboutMeDocumentData,
       SettingsDocument,
       SettingsDocumentData,
       SettingsDocumentDataNavigationsItem,
