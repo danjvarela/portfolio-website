@@ -22,10 +22,10 @@ export default function Project({
       ></div>
       <div className="p-4">
         <h3 className="!font-sans mt-0">{title}</h3>
-        <div className="prose-p:mb-0">
-          <PrismicRichText field={description} />
-        </div>
-        <p className="flex gap-4 mb-0">
+
+        <PrismicRichText field={description} />
+
+        <div className="flex gap-4 my-4">
           {isFilled.link(link) && (
             <div className="flex">
               <PrismicNavLink text="Visit" className="not-prose" field={link} />
@@ -43,9 +43,9 @@ export default function Project({
               <ExternalLink className="w-3 h-3" />
             </div>
           )}
-        </p>
+        </div>
 
-        <p className="flex flex-wrap mb-0 gap-2">
+        <div className="flex flex-wrap mb-0 gap-2">
           {technologies_used.map((technology) => (
             <div
               key={technology.name}
@@ -54,7 +54,7 @@ export default function Project({
               {technology.name}
             </div>
           ))}
-        </p>
+        </div>
       </div>
     </div>
   );
