@@ -4,7 +4,58 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Content for Blog documents
+ */
+interface BlogDocumentData {
+  /**
+   * Title field in *Blog*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.title
+   * - **Tab**: Blog
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  title: prismic.KeyTextField;
+
+  /**
+   * Date Published field in *Blog*
+   *
+   * - **Field Type**: Date
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.date_published
+   * - **Tab**: Blog
+   * - **Documentation**: https://prismic.io/docs/field#date
+   */
+  date_published: prismic.DateField;
+
+  /**
+   * Content field in *Blog*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blog.content
+   * - **Tab**: Blog
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  content: prismic.RichTextField;
+}
+
+/**
+ * Blog document from Prismic
+ *
+ * - **API ID**: `blog`
+ * - **Repeatable**: `true`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type BlogDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithUID<Simplify<BlogDocumentData>, "blog", Lang>;
+
 type HomeDocumentDataSlicesSlice =
+  | BlogsSlice
   | ProjectsSlice
   | AboutMeSlice
   | IntroductionSlice;
@@ -265,6 +316,7 @@ export type SettingsDocument<Lang extends string = string> =
   >;
 
 export type AllDocumentTypes =
+  | BlogDocument
   | HomeDocument
   | ProjectDocument
   | SettingsDocument;
@@ -323,6 +375,73 @@ export type AboutMeSlice = prismic.SharedSlice<
   "about_me",
   AboutMeSliceVariation
 >;
+
+/**
+ * Primary content in *Blogs → Primary*
+ */
+export interface BlogsSliceDefaultPrimary {
+  /**
+   * Section ID field in *Blogs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogs.primary.section_id
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_id: prismic.KeyTextField;
+
+  /**
+   * Section Title field in *Blogs → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogs.primary.section_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  section_title: prismic.KeyTextField;
+}
+
+/**
+ * Primary content in *Blogs → Items*
+ */
+export interface BlogsSliceDefaultItem {
+  /**
+   * Blog field in *Blogs → Items*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: blogs.items[].blog
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  blog: prismic.ContentRelationshipField<"blog">;
+}
+
+/**
+ * Default variation for Blogs Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogsSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<BlogsSliceDefaultPrimary>,
+  Simplify<BlogsSliceDefaultItem>
+>;
+
+/**
+ * Slice variation for *Blogs*
+ */
+type BlogsSliceVariation = BlogsSliceDefault;
+
+/**
+ * Blogs Shared Slice
+ *
+ * - **API ID**: `blogs`
+ * - **Description**: Blogs
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type BlogsSlice = prismic.SharedSlice<"blogs", BlogsSliceVariation>;
 
 /**
  * Primary content in *Introduction → Primary*
@@ -449,6 +568,8 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      BlogDocument,
+      BlogDocumentData,
       HomeDocument,
       HomeDocumentData,
       HomeDocumentDataSlicesSlice,
@@ -463,6 +584,11 @@ declare module "@prismicio/client" {
       AboutMeSliceDefaultPrimary,
       AboutMeSliceVariation,
       AboutMeSliceDefault,
+      BlogsSlice,
+      BlogsSliceDefaultPrimary,
+      BlogsSliceDefaultItem,
+      BlogsSliceVariation,
+      BlogsSliceDefault,
       IntroductionSlice,
       IntroductionSliceDefaultPrimary,
       IntroductionSliceVariation,
