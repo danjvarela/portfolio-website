@@ -11,6 +11,7 @@ import {
 } from "@icons-pack/react-simple-icons";
 import { NavLink } from "@/components/nav-link";
 import { Separator } from "@/components/ui/separator";
+import Link from "next/link";
 
 export default async function HomePage() {
   const client = createClient();
@@ -34,6 +35,45 @@ export default async function HomePage() {
           )}
           components={omit(components, "introduction")}
         />
+
+        <Section id="blogs">
+          <h1>Blogs</h1>
+          <div className="prose-h2:mt-4 prose-h2:mb-0 mb-8">
+            <h2 className="flex flex-col">Blog Title</h2>
+
+            <div className="text-xs font-sans text-rx-slatedark11 font-normal">
+              <div className="flex items-center gap-2">
+                <span>Posted 2 days ago</span>
+                <span>•</span>
+                <span>2 min read</span>
+              </div>
+              <div className="flex items-center gap-4 mt-2">
+                <Link href="">#hello</Link>
+                <Link href="">#hello</Link>
+                <Link href="">#hello</Link>
+                <Link href="">#hello</Link>
+              </div>
+            </div>
+          </div>
+          <Separator orientation="horizontal" />
+          <div className="prose-h2:mt-4 prose-h2:mb-0 mb-4">
+            <h2 className="flex flex-col">Blog Title</h2>
+
+            <div className="text-xs font-sans text-rx-slatedark11 font-normal">
+              <div className="flex items-center gap-2">
+                <span>Posted 2 days ago</span>
+                <span>•</span>
+                <span>2 min read</span>
+              </div>
+              <div className="flex items-center gap-4 mt-2">
+                <Link href="">#hello</Link>
+                <Link href="">#hello</Link>
+                <Link href="">#hello</Link>
+                <Link href="">#hello</Link>
+              </div>
+            </div>
+          </div>
+        </Section>
 
         <Section id="contact-me" className="mb-8">
           <h1>Let's keep in touch</h1>
