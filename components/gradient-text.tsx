@@ -9,8 +9,8 @@ export default function GradientText({
   return (
     <span
       className={cn(
-        "bg-gradient-to-r from-rx-cyanlight9 to-rx-purplelight9",
-        "dark:from-rx-cyandark9 dark:to-rx-purpledark9",
+        "bg-gradient-to-r",
+        "from-rx-cyandark9 to-rx-purpledark9",
         "inline-block text-transparent bg-clip-text",
         className,
       )}

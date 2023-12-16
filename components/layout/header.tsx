@@ -28,7 +28,7 @@ export default async function Header() {
         ))}
       </div>
       <div
-        className="bg-rx-slatelight2 dark:bg-rx-slatedark2"
+        className="bg-rx-slatedark2"
         style={{
           height: `calc(50vh - ${headerHeight}px)`,
         }}

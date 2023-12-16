@@ -13,13 +13,9 @@ export default function Project({
   technologies_used,
 }: Content.ProjectDocument["data"]) {
   return (
-    <div
-      className={cn(
-        "w-full bg-rx-slatelight3 dark:bg-rx-slatedark3 rounded-lg overflow-hidden",
-      )}
-    >
+    <div className={cn("w-full bg-rx-slatedark3 rounded-lg overflow-hidden")}>
       <div
-        className="aspect-[1.618] bg-rx-slatelight1 dark:bg-rx-slatedark1 bg-cover bg-no-repeat bg-center"
+        className="aspect-[1.618] bg-rx-slatedark1 bg-cover bg-no-repeat bg-center"
         style={{
           backgroundImage: `url(${image.url})`,
         }}
@@ -53,7 +49,7 @@ export default function Project({
           {technologies_used.map((technology) => (
             <div
               key={technology.name}
-              className="text-[10px] bg-rx-slatelight1 dark:bg-rx-slatedark1 py-1 px-2 rounded-full leading-none select-none"
+              className="text-[10px] bg-rx-slatedark1 py-1 px-2 rounded-full leading-none select-none"
             >
               {technology.name}
             </div>

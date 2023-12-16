@@ -11,7 +11,7 @@ const Separator = forwardRef<ElementRef<typeof RxSeparator>, SeparatorProps>(
     return (
       <RxSeparator
         className={cn(
-          "bg-rx-slatelight7 dark:bg-rx-slatedark7",
+          "bg-rx-slatedark7",
           orientation === "horizontal" && "h-px w-full",
           orientation === "vertical" && "w-px h-full",
           className,
