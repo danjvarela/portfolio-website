@@ -7,7 +7,7 @@ const sharedClassName = cn(
   "flex gap-2 items-center",
   "transition-colors relative w-fit",
   "text-rx-cyandark11 hover:text-rx-cyandark12 overflow-hidden",
-  "before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:-translate-x-full",
+  "before:absolute before:block before:w-full before:h-[2px] before:bottom-0 before:left-0 before:-translate-x-[102%]",
   "before:bg-rx-cyandark12",
   "before:hover:translate-x-0 before:transition-transform",
 );
