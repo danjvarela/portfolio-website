@@ -13,7 +13,7 @@ export default async function Header() {
     <>
       <div
         className={cn(
-          "flex gap-4 items-center justify-center py-4 sticky top-0 text-sm md:text-xl font-gochi",
+          "flex gap-4 items-center justify-center py-4 sticky top-0 text-base md:text-xl font-gochi",
           "bg-rx-slatedark2/75 backdrop-blur z-50",
         )}
         style={{ height: headerHeight }}

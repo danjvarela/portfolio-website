@@ -31,7 +31,7 @@ const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
         </GradientText>
       </div>
 
-      <div className="md:text-xl xl:text-4xl">
+      <div className="text-lg md:text-xl xl:text-4xl">
         {typingStep >= 2 && (
           <TypeAnimation
             sequence={[slice.primary.introduction_message as string]}
