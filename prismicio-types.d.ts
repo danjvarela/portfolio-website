@@ -246,6 +246,17 @@ interface SettingsDocumentData {
   navigations: prismic.GroupField<
     Simplify<SettingsDocumentDataNavigationsItem>
   >;
+
+  /**
+   * site_keywords field in *Settings*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: settings.site_keywords
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  site_keywords: prismic.KeyTextField;
 }
 
 /**

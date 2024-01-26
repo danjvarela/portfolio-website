@@ -23,6 +23,7 @@ export async function generateMetadata(): Promise<Metadata> {
     description:
       settings.data.site_description ||
       "Dan Varela's Portfolio Website and Blog",
+    keywords: settings.data.site_keywords,
     openGraph: {
       images: [settings.data.og_image.url || ""],
     },
