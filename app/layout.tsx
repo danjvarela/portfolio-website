@@ -18,6 +18,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const settings = await client.getSingle("settings");
 
   return {
+    metadataBase: new URL("https://danvarela.com"),
     title: settings.data.site_title || "Dan Varela",
     description:
       settings.data.site_description ||
