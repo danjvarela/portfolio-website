@@ -17,7 +17,7 @@ const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
       data-slice-type={slice.slice_type}
       data-slice-variation={slice.variation}
     >
-      <div className="text-4xl md:text-6xl xl:text-8xl">
+      <h1 className="text-4xl md:text-6xl xl:text-8xl">
         <TypeAnimation
           sequence={["Hello, I'm ", () => setTypingStep((prev) => prev + 1)]}
           cursor={false}
@@ -29,7 +29,7 @@ const Introduction = ({ slice }: IntroductionProps): JSX.Element => {
             />
           )}
         </GradientText>
-      </div>
+      </h1>
 
       <div className="text-lg md:text-xl xl:text-4xl">
         {typingStep >= 2 && (

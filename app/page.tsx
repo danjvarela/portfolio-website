@@ -36,7 +36,7 @@ export default async function HomePage() {
         />
 
         <Section id="contact-me" className="mb-8">
-          <h1>Let's keep in touch</h1>
+          <h2>Let's keep in touch</h2>
           <div className="flex gap-8 flex-wrap not-prose font-gochi text-xl">
             <NavLink
               text="LinkedIn"

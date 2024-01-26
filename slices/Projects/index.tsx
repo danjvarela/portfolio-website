@@ -25,7 +25,7 @@ const Projects = async ({ slice }: ProjectsProps): Promise<JSX.Element> => {
       data-slice-variation={slice.variation}
       id={slice.primary.section_id || ""}
     >
-      <h1>{slice.primary.section_title}</h1>
+      <h2>{slice.primary.section_title}</h2>
       <div className="flex flex-col gap-8">
         {projects.map((project, i) =>
           project ? (
