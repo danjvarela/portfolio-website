@@ -46,7 +46,7 @@ export default async function HomePage() {
             />
             <NavLink
               text="Email"
-              href="mailto:dan@danvarela.com"
+              href="mailto:work.danmarvarela@gmail.com"
               icon={<SiGmail className="w-4 h-4 mb-1" />}
               target="_blank"
             />
